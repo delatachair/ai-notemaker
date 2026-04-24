@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NOTEMAKER BY SA</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="dark-mode">
+
+<div class="theme-toggle">
+    <button id="themeBtn" onclick="toggleTheme()">☀️ Light Mode</button>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h1>📘 NOTEMAKER BY SA</h1>
+        <p class="subtitle">Enter a topic and generate structured subtopics instantly.</p>
+
+        <div id="inputSection">
+            <div class="input-group">
+                <input type="text" id="chapterInput" placeholder="Enter topic name">
+                <button id="generateBtn">Generate</button>
+            </div>
+
+            <div class="divider"><span>OR UPLOAD A FILE</span></div>
+
+            <div class="upload-group">
+                <label for="fileInput" class="file-label">
+                    <span id="fileLabelText">📎 Choose a file (TXT, PDF, DOCX)</span>
+                    <input type="file" id="fileInput" accept=".txt,.md,.pdf,.docx" hidden>
+                </label>
+                <button id="uploadBtn" onclick="uploadFile()">Generate Notes</button>
+            </div>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div id="loader"></div>
+            <p>Generating...</p>
+        </div>
+
+        <div id="subtopicsContainer" class="hidden">
+            <h3>Subtopics</h3>
+            <div id="subtopicsList"></div>
+        </div>
+
+        <div id="detailContainer" class="hidden">
+            <button onclick="backToTopics()" style="margin-bottom: 10px; background: #475569;">← Back</button>
+            <div id="detailContent"></div>
+        </div>
+
+        <div id="output"></div>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
